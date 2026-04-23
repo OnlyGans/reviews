@@ -1,0 +1,30 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Built app successfully"
+
+  deployment-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: deploy
+        run : echo "Deployment sucess"
+
+  deployment-prod:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: deploy
+        run : echo "Deployment sucess"
+
